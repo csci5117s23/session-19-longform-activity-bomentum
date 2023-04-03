@@ -1,22 +1,34 @@
-import logo from './logo.svg';
+import FlashcardList from './FlashcardList';
+import { useState } from 'react';
 import './App.css';
 
 function App() {
-  const QUESTIONS = [{front: "question1", back:"answer1"},
-                    {front: "question2", back:"answer2"},
-                    {front: "question3", back:"answer3"},]
 
+
+    //   //useState
+  const [flashcards, setFlashcards] = useState(QUESTIONS)
   return (
-    <div className="App">
+    <>
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-      </header>
+        <h1>Session 19 Flashcard App</h1>
+    </header>
+    
+      <FlashcardList flashcards={flashcards} />
+      
+      </>
 
-      YOUR CODE WILL GO HERE!
-
-
-    </div>
   );
 }
+
+  const QUESTIONS = [
+                    { front: "Favorite Dish", back: "Pho`", id: "111"},
+    { front: "Favorite Color", back: "Anything Bright", id: "222" },
+                    { front: "Favorite Day of the Week", back: "Sunday", id: "333" },
+  ]
+  
+  
+
+
+
 
 export default App;
